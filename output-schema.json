@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EngineeringCouncilOutput",
+  "type": "object",
+  "required": ["phase1_analyses", "phase2_dependency_map", "phase3_synthesis"],
+  "properties": {
+    "phase1_analyses": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": ["id", "field", "engineer", "severity_overall", "summary", "problems", "missing_elements", "improvements", "diagram", "precedent"],
+        "properties": {
+          "id": { "type": "string" },
+          "field": { "type": "string" },
+          "engineer": { "type": "string" },
+          "severity_overall": { "type": "string", "enum": ["critical", "major", "minor"] },
+          "summary": { "type": "string", "minLength": 200 },
+          "problems": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["issue", "severity", "location"],
+              "properties": {
+                "issue": { "type": "string" },
+                "severity": { "type": "string", "enum": ["critical", "major", "minor"] },
+                "location": { "type": "string" }
+              }
+            }
+          },
+          "missing_elements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["element", "impact"],
+              "properties": {
+                "element": { "type": "string" },
+                "impact": { "type": "string" }
+              }
+            }
+          },
+          "improvements": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["action", "rationale"],
+              "properties": {
+                "action": { "type": "string" },
+                "rationale": { "type": "string" }
+              }
+            }
+          },
+          "diagram": {
+            "type": "object",
+            "required": ["type", "title", "description", "content"],
+            "properties": {
+              "type": { "type": "string", "enum": ["ascii", "mermaid"] },
+              "title": { "type": "string" },
+              "description": { "type": "string" },
+              "content": { "type": "string" }
+            }
+          },
+          "precedent": {
+            "type": "object",
+            "required": ["project", "engineer_architect", "year", "principle", "what_to_study"],
+            "properties": {
+              "project": { "type": "string" },
+              "engineer_architect": { "type": "string" },
+              "year": { "type": "string" },
+              "principle": { "type": "string" },
+              "what_to_study": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "phase2_dependency_map": {
+      "type": "object",
+      "required": ["concern_chains", "systemic_gaps", "dependency_diagram"],
+      "properties": {
+        "concern_chains": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["chain_id", "chain_title", "links", "combined_severity"],
+            "properties": {
+              "chain_id": { "type": "string" },
+              "chain_title": { "type": "string" },
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["engineer_id", "concern_summary", "affects_next"],
+                  "properties": {
+                    "engineer_id": { "type": "string" },
+                    "concern_summary": { "type": "string" },
+                    "affects_next": { "type": "string" }
+                  }
+                }
+              },
+              "combined_severity": { "type": "string", "enum": ["critical", "major", "minor"] }
+            }
+          }
+        },
+        "systemic_gaps": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "dependency_diagram": {
+          "type": "object",
+          "required": ["type", "content"],
+          "properties": {
+            "type": { "type": "string", "enum": ["mermaid"] },
+            "content": { "type": "string" }
+          }
+        }
+      }
+    },
+    "phase3_synthesis": {
+      "type": "object",
+      "required": ["executive_summary", "critical_issues", "major_issues", "minor_issues", "improvement_roadmap"],
+      "properties": {
+        "executive_summary": { "type": "string" },
+        "critical_issues": { "type": "array", "items": { "type": "string" } },
+        "major_issues": { "type": "array", "items": { "type": "string" } },
+        "minor_issues": { "type": "array", "items": { "type": "string" } },
+        "improvement_roadmap": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["step", "action", "field", "priority"],
+            "properties": {
+              "step": { "type": "integer" },
+              "action": { "type": "string" },
+              "field": { "type": "string" },
+              "priority": { "type": "string", "enum": ["immediate", "before-next-stage", "before-construction"] }
+            }
+          }
+        }
+      }
+    }
+  }
+}
