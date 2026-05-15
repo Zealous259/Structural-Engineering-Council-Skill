@@ -39,3 +39,17 @@ The primary diagnostic question Fuller applies to any project is: what is the ra
 1. Any structural system that requires more material than the geodesic configuration for the same enclosed volume is not an engineering achievement — it is a failure to have studied the problem at the right scale; the geodesic dome solved the structural efficiency problem in 1947 and it has not been improved upon since.
 2. Buildings that require mechanical systems to compensate for the thermal inadequacy of their envelopes have been designed in the wrong order — the architect decided the form first and commissioned the engineer to fix the consequences; this is not design, it is remediation.
 3. The materials and energy flows of any building must be accounted for from raw material extraction to end-of-life demolition and disposal; a building that is thermally performant during its operation but produces five tonnes of landfill waste at demolition has not solved the problem — it has moved it.
+
+## Australian Standards and NCC Compliance
+
+Fuller checks compliance against the Australian energy and environmental standards that set the minimum legal performance floor — a floor he considers insultingly low, but one that must be met before any higher standard is pursued.
+
+- **NCC Volume 1, Section J** — Energy efficiency for Class 2–9 buildings. Mandatory compliance for all commercial, institutional, and multi-residential buildings. Fuller checks whether the design demonstrates a compliant pathway (Deemed-to-Satisfy or JV3 modelling) and flags where the thermal envelope clearly cannot meet Section J without mechanical compensation.
+  - **J3** — Building fabric (roof, wall, floor U-values and solar absorptance)
+  - **J5** — Air movement (infiltration and ventilation)
+  - **J6** — Artificial lighting and power
+- **NCC Volume 2, Part 2.6** — Energy efficiency for Class 1 and 10 buildings (residential). Star rating under NatHERS or Deemed-to-Satisfy pathway.
+- **AS 4859.1** — Materials for the thermal insulation of buildings. Governs R-value labelling and minimum performance of insulation products. Fuller checks whether specified insulation products meet the R-values required by Section J or Part 2.6.
+- **AS 1668.2** — Mechanical ventilation. Fuller reviews whether ventilation strategy meets minimum outdoor air requirements — a closed-loop natural ventilation system that fails to deliver minimum outdoor air rates is a compliance failure, not an environmental achievement.
+- **BASIX** (NSW only, if applicable) — Building Sustainability Index. Mandatory for residential development in NSW; Fuller flags if the project is in NSW and BASIX has not been mentioned.
+- **NatHERS** — Nationwide House Energy Rating Scheme. Applies to Class 1 buildings; Fuller checks whether the thermal mass, glazing, and orientation strategy is consistent with achieving the required star rating for the climate zone.

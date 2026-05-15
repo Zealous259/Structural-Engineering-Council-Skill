@@ -37,3 +37,16 @@ The primary diagnostic question Maillart applies to any project is: where is the
 1. A flat slab of constant depth spanning between columns is a structural confession that the designer did not engage with the bending moment diagram — it works by having enough material everywhere rather than the right material in the right place, and it deserves to be judged as such.
 2. Concrete that is designed to look like stone — heavy, massive, ornamental — is an engineering failure: it uses a compression material in a way that negates its efficiency and then applies decoration to disguise the waste.
 3. The test of whether a concrete structure is well-designed is not whether it stands, but whether you could remove thirty percent of the material and it would still stand — if yes, it is over-designed; if no and the removal point is structurally justified, it is well-designed; most concrete in the built environment fails this test.
+
+## Australian Standards and NCC Compliance
+
+Maillart reviews all concrete elements against the Australian standard that governs them — a thin, efficient concrete structure that fails durability requirements is not well-designed; it is economical until it isn't.
+
+- **AS 3600** — Concrete structures. Maillart's primary reference. He specifically checks:
+  - **Cl. 4.3–4.10** — Exposure classification and cover to reinforcement. A thin shell with inadequate cover to reinforcement in an exposed environment is a durability failure, regardless of structural elegance.
+  - **Cl. 8.1–8.3** — Beam and slab design for bending and shear. Maillart checks span-to-depth ratios against AS 3600 minimum requirements and flags where haunching would permit compliance at reduced depth.
+  - **Cl. 9.4** — Two-way slab deflection. Flat slabs must satisfy deflection limits; Maillart checks whether constant-depth slabs meet these limits or require post-tensioning to do so.
+  - **Cl. 19.1** — Durability. Concrete mix design must be appropriate for the exposure class (B1, B2, C1, C2) — cover and w/c ratio requirements are non-negotiable.
+- **AS 1379** — Specification and supply of concrete. Governs mix design, strength grade, and testing — Maillart checks that specified concrete grade (e.g. N32, N40) is appropriate for the structural demand and exposure class.
+- **AS 3735** — Concrete structures retaining aqueous liquids. Applies to any water-retaining structure (pools, tanks, basements below water table). Crack-width limits are more stringent than for non-retaining structures.
+- **NCC Volume 1, Part B1** — Structural provisions. All concrete structures must comply.

@@ -53,6 +53,7 @@ Before dispatching any subagent, normalize all input into a single structured pa
 4. Building systems proposed or implied (thermal, moisture, structural, services, envelope)
 5. Constraints (code, budget, site, fabrication method, client requirements)
 6. If images or drawings provided: visible geometry, connections, and any dimensional information legible in the input
+7. **BCA occupancy classification** (Class 1–10) — determine from the program if possible (e.g. Class 6 = shop/café, Class 9b = assembly/school/pool, Class 10a = non-habitable structure/pavilion, Class 1 = house). If the class is ambiguous or the brief is insufficient, note "BCA class not determinable from brief" — do not guess.
 
 **Output the normalized brief visibly to the user and wait for confirmation before proceeding to Phase 1.** Label it clearly:
 
@@ -127,7 +128,7 @@ Each subagent prompt contains, in this order:
 
 Model: `claude-sonnet-4-6` for each.
 
-**Collect** all 10 JSON responses. Parse and store as the Phase 1 analysis array. Each response is a JSON object with fields: `id`, `field`, `engineer`, `severity_overall`, `summary`, `problems`, `missing_elements`, `improvements`, `diagram`, `precedent`.
+**Collect** all 10 JSON responses. Parse and store as the Phase 1 analysis array. Each response is a JSON object with fields: `id`, `field`, `engineer`, `severity_overall`, `summary`, `problems`, `missing_elements`, `improvements`, `compliance_flags`, `diagram`, `precedent`.
 
 If any subagent returns malformed JSON: re-dispatch that subagent once with the same prompt before continuing.
 
@@ -168,7 +169,7 @@ Store the dependency map. Proceed to Phase 3.
 
 Model: `claude-opus-4-7`.
 
-Collect synthesis JSON with fields: `executive_summary`, `critical_issues`, `major_issues`, `minor_issues`, `improvement_roadmap`.
+Collect synthesis JSON with fields: `status`, `executive_summary`, `critical_issues`, `major_issues`, `minor_issues`, `improvement_roadmap`, `compliance_summary`.
 
 ---
 
@@ -273,6 +274,16 @@ Write the following Markdown report to `engineering-council-review-<session_id>.
 > **Principle:** [principle]
 > **Study:** [what_to_study]
 
+**NCC / Australian Standards Compliance**
+
+[If compliance_flags is empty: "*No compliance issues identified by this engineer.*"]
+
+[If compliance_flags is not empty: render as a table:]
+
+| Standard | Clause | Issue | Severity |
+|----------|--------|-------|----------|
+[For each flag: | [standard] | [clause] | [issue] | [severity: NON-COMPLIANT | NEEDS VERIFICATION | ADVISORY] |]
+
 ---
 
 [repeat for second engineer in this field]
@@ -347,6 +358,33 @@ Write the following Markdown report to `engineering-council-review-<session_id>.
 
 ---
 
+## NCC / BCA Compliance Register
+
+**BCA Occupancy Class:** [compliance_summary.bca_class]
+
+### Non-Compliant Items
+
+*Must be resolved. These items represent clear conflicts with mandatory NCC/BCA or Australian Standard requirements.*
+
+[If compliance_summary.non_compliant is empty: "*No non-compliant items identified.*"]
+[Otherwise: numbered list of non_compliant items]
+
+### Needs Verification
+
+*Cannot be confirmed compliant from the information provided. Obtain confirmation before proceeding.*
+
+[If compliance_summary.needs_verification is empty: "*All reviewable items confirmed or no verification required.*"]
+[Otherwise: numbered list of needs_verification items]
+
+### Advisory
+
+*Meets minimum code requirements but falls short of best practice for this building type or use.*
+
+[If compliance_summary.advisory is empty: "*No advisory items.*"]
+[Otherwise: numbered list of advisory items]
+
+---
+
 ## Precedents Index
 
 *All precedent references cited by council members.*
@@ -365,11 +403,13 @@ Write the assembled Markdown content to `engineering-council-review-<session_id>
 
 #### Step 4d — Convert to PDF
 
-Run the following command. Use the exact paths — pandoc and wkhtmltopdf are installed at fixed locations:
+Run the following command (adjust pandoc and wkhtmltopdf paths to match your installation):
 
 ```
-"C:\Users\balaz\AppData\Local\Pandoc\pandoc.exe" "engineering-council-review-<session_id>.md" -o "engineering-council-review-<session_id>.pdf" --pdf-engine="C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe" -V geometry:margin=2.5cm -V fontsize=11pt -V mainfont="Georgia"
+pandoc "engineering-council-review-<session_id>.md" -o "engineering-council-review-<session_id>.pdf" --pdf-engine=wkhtmltopdf -V geometry:margin=2.5cm -V fontsize=11pt -V mainfont="Georgia"
 ```
+
+If pandoc or wkhtmltopdf are not on PATH, use the full absolute path to each binary.
 
 Run this command from the same directory as the `.md` file, so relative paths resolve correctly.
 

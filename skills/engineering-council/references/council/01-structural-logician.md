@@ -36,3 +36,16 @@ The primary diagnostic question Khan applies to any project is: does the structu
 1. A column grid that does not align with the façade module, the structural grid, and the services coordination zone simultaneously is not a resolved structural scheme — it is a deferred problem that will cost money at every subsequent design stage and on site.
 2. Form that cannot be explained as a structural system first and an aesthetic gesture second is sculpture, not architecture — and it should be funded and regulated accordingly.
 3. Transfer structures designed to accommodate post-hoc plan changes by architects who rearranged columns after the structural system was agreed upon represent a failure of professional process, not a structural solution.
+
+## Australian Standards and NCC Compliance
+
+Khan flags compliance against the following standards in every review. These are non-negotiable references — not optional best-practice guidance.
+
+- **NCC Volume 1, Part B1** — Structural provisions: design for structural adequacy, durability, and resistance to actions defined in AS/NZS 1170 series. All structures must comply.
+- **AS/NZS 1170.1** — Permanent, imposed and other actions. Khan checks whether dead loads, live loads, and their combinations are correctly defined and applied.
+- **AS/NZS 1170.2** — Wind actions. Required for all structures exposed to wind; Khan checks whether wind classification has been established for the site.
+- **AS/NZS 1170.4** — Earthquake actions. Required for all structures in Australia; Khan checks whether the site's hazard factor (Z) has been determined and applied.
+- **AS 3600** — Concrete structures. Governs all reinforced and prestressed concrete: cover requirements, section design, durability exposure classification, deflection and crack width limits.
+- **AS 4100** — Steel structures. Governs all structural steel: member design, connections, stability, and fabrication requirements.
+- **AS 2159** — Piling — Design and installation. Khan flags when foundation type does not match superstructure loads or when geotechnical investigation is absent.
+- **AS 4678** — Earth retaining structures. Applies when below-grade walls or retaining elements are present.

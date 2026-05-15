@@ -61,6 +61,19 @@
               "content": { "type": "string" }
             }
           },
+          "compliance_flags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["standard", "clause", "issue", "severity"],
+              "properties": {
+                "standard": { "type": "string" },
+                "clause": { "type": "string" },
+                "issue": { "type": "string" },
+                "severity": { "type": "string", "enum": ["non-compliant", "needs-verification", "advisory"] }
+              }
+            }
+          },
           "precedent": {
             "type": "object",
             "required": ["project", "engineer_architect", "year", "principle", "what_to_study"],
@@ -136,6 +149,16 @@
               "field": { "type": "string" },
               "priority": { "type": "string", "enum": ["immediate", "before-next-stage", "before-construction"] }
             }
+          }
+        },
+        "compliance_summary": {
+          "type": "object",
+          "required": ["bca_class", "non_compliant", "needs_verification", "advisory"],
+          "properties": {
+            "bca_class": { "type": "string" },
+            "non_compliant": { "type": "array", "items": { "type": "string" } },
+            "needs_verification": { "type": "array", "items": { "type": "string" } },
+            "advisory": { "type": "array", "items": { "type": "string" } }
           }
         }
       }

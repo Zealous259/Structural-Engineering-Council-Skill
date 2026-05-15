@@ -11,9 +11,10 @@ This synthesis is NOT a grade. It is NOT a verdict. It is feedback: what is wron
 ## Rules
 
 - Do NOT inject engineering judgments of your own. You are a facilitator — draw only from what the council members actually said.
-- Critical issues must come from: concerns rated `critical` by at least one engineer, OR chains rated `critical` in the Phase 2 dependency map, OR systemic gaps identified in Phase 2.
-- Major issues come from: concerns rated `major`, or `critical` by only one engineer in isolation.
-- Minor issues come from: concerns rated `minor` by engineers.
+- Critical issues must come from: concerns rated `critical` by at least one engineer, OR chains rated `critical` in the Phase 2 dependency map, OR systemic gaps identified in Phase 2, OR compliance flags rated `non-compliant`.
+- Major issues come from: concerns rated `major`, or `critical` by only one engineer in isolation, OR compliance flags rated `needs-verification` on critical systems.
+- Minor issues come from: concerns rated `minor` by engineers, OR compliance flags rated `advisory`.
+- Compliance flags rated `non-compliant` must be called out explicitly in the compliance_summary. Do not bury non-compliant items in the general issues list — they must appear in both the relevant issue list AND compliance_summary.
 - The improvement roadmap must be ordered by priority: critical issues first, then major, then minor. Within the same priority level, order by dependency: if Issue A must be resolved before Issue B can be addressed (per the Phase 2 chain structure), A comes first.
 - The executive summary must be written in plain language a non-engineering stakeholder can read. No jargon. State what stage the design is at, what the council found, and what the most urgent actions are.
 
@@ -52,7 +53,19 @@ Required structure (field names must be exact):
       "field": "<which engineering field owns this action>",
       "priority": "<immediate | before-next-stage | before-construction>"
     }
-  ]
+  ],
+  "compliance_summary": {
+    "bca_class": "<BCA occupancy class if determinable from brief, e.g. Class 6 (shop), Class 9b (assembly), Class 10a (non-habitable structure) — or 'not determinable from brief'>",
+    "non_compliant": [
+      "<standard + clause: specific non-compliance — cite source engineer and field>"
+    ],
+    "needs_verification": [
+      "<standard + clause: item that could not be confirmed compliant from the brief — state what information is needed>"
+    ],
+    "advisory": [
+      "<standard + clause: meets minimum code but falls short of best practice — cite why it matters>"
+    ]
+  }
 }
 
 ## Field Notes
@@ -61,3 +74,7 @@ Required structure (field names must be exact):
 - `critical_issues`: pull from Phase 1 critical-rated problems + Phase 2 critical-rated chains. Attribute each to its source. A critical issue from a dependency chain should name all engineers in that chain.
 - `improvement_roadmap`: steps must be specific. Not "improve the thermal performance" — "Commission a thermal bridging analysis at the glazing-to-slab junction per AS/NZS 4859 before the next design iteration." Order by: `immediate` (today, before any further design work), `before-next-stage` (before moving to DD or documentation), `before-construction` (before issuing for tender).
 - `status`: assign from data, not from desire to be encouraging. If the data says REQUIRES REDESIGN, say so.
+- `compliance_summary.bca_class`: determine from the brief's program description (e.g. pool = Class 9b, house = Class 1, café = Class 6). If the BCA class cannot be determined from the brief, state that explicitly.
+- `compliance_summary.non_compliant`: only items where a council engineer explicitly flagged `non-compliant`. Do not infer additional non-compliances not in the Phase 1 data.
+- `compliance_summary.needs_verification`: consolidate all `needs-verification` flags from all 10 engineers. Group by standard if multiple engineers flag the same clause.
+- `compliance_summary.advisory`: consolidate all `advisory` flags. These are for the designer's awareness, not urgent action.

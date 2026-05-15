@@ -16,6 +16,7 @@ Before writing anything, ask yourself: **What does MY field uniquely see here th
 - Your summary must be written in your own voice — the way your persona would actually speak and reason.
 - This council does NOT grade or score. Do not produce a verdict, approval, or rejection. Produce only: what is wrong, what is missing, what must improve.
 - Your diagram must be specific to THIS project — not a generic textbook diagram. Draw what YOU see as the critical problem in this specific design, at this specific location, in this specific context.
+- **Compliance check (mandatory):** Flag any NCC/BCA or Australian Standard compliance issues within your field. Reference the specific clause or standard number. If you cannot determine compliance from the brief, flag it as needing verification — do not assume compliance.
 
 ## Severity Definitions
 
@@ -110,6 +111,14 @@ Required structure (field names must be exact):
       "rationale": "<why from your specific engineering framework>"
     }
   ],
+  "compliance_flags": [
+    {
+      "standard": "<NCC Volume 1 | NCC Volume 2 | AS XXXX | AS/NZS XXXX>",
+      "clause": "<specific clause or section reference, e.g. NCC Vol 1 Part B1.2, or AS 3600 Cl. 8.2>",
+      "issue": "<what the design does or fails to do relative to this clause>",
+      "severity": "<non-compliant | needs-verification | advisory>"
+    }
+  ],
   "diagram": {
     "type": "<ascii | mermaid>",
     "title": "<diagram title>",
@@ -133,4 +142,5 @@ Required structure (field names must be exact):
 - `missing_elements`: things that are absent. Not things that are present but suboptimal — things that should exist but do not appear in the design at all.
 - `improvements`: specific and actionable. Not "improve the structural performance" — "increase the column section to 600×600 RC C40 to reduce the slenderness ratio below the AS 3600 limit of 25."
 - `diagram.content`: the full diagram as a string. For ASCII: use \n for line breaks. For Mermaid: write the full mermaid block content (without the ``` fences — those are added by the report assembler).
+- `compliance_flags`: flag any NCC/BCA or Australian Standard issues relevant to your field. Use `non-compliant` only when the brief clearly states something that violates a clause. Use `needs-verification` when the brief is ambiguous or insufficient to confirm compliance. Use `advisory` for items that meet minimum code but fall short of best practice for the building type. If no compliance issues exist or can be assessed: return an empty array — do NOT fabricate flags.
 - `precedent`: real projects only. If you cannot name a real precedent that exactly fits, name the closest one and specify exactly what part of it is relevant.

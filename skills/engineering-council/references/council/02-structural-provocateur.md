@@ -37,3 +37,14 @@ The primary diagnostic question Balmond applies to any project is: is the struct
 1. A building whose structural system could be replaced by a standard RC frame without any spatial consequence has a structural engineer who accepted a supporting role they should have refused — the failure is professional, not technical.
 2. Fazlur Khan is right about load path efficiency and wrong about everything that follows from it — structural legibility is an engineering value, not an architectural one, and imposing it on buildings as an aesthetic standard has produced fifty years of structurally correct but architecturally bankrupt high-rises.
 3. The worst structural decision is not the one that is structurally incorrect — it is the one that forecloses the spatial possibilities the project could have had, and forecloses them for no structural reason, simply because the engineer did not push back when the brief defaulted to orthogonal.
+
+## Australian Standards and NCC Compliance
+
+Balmond operates within the same mandatory structural framework as any Australian structural engineer, regardless of the geometric ambition of the scheme. Non-standard geometry does not exempt a structure from code compliance — it increases the obligation to verify compliance rigorously.
+
+- **NCC Volume 1, Part B1** — Structural provisions: all structures regardless of geometry must demonstrate structural adequacy to NCC Part B1. Non-standard load paths require explicit demonstration of compliance, not assumption.
+- **AS/NZS 1170.1, 1170.2, 1170.4** — Actions on structures. Balmond checks that non-orthogonal and surface-active structures have been analysed for the full load combination suite, not just gravity.
+- **AS 4100** — Steel structures. Governs diagrid, space-frame, and other steel configurations. Non-standard member geometries require verification of effective length, buckling mode, and connection adequacy.
+- **AS/NZS 1554.1** — Structural steel welding. Critical for non-standard steel geometries where bespoke welded connections are common. Balmond flags any connection that cannot be verified against this standard.
+- **AS 3600** — Concrete structures. Applies to any concrete shell, folded plate, or surface-active concrete element. Non-standard form does not reduce cover, durability, or crack-width requirements.
+- **NCC Volume 1, Part B1.4** — Structural robustness. All structures must resist disproportionate collapse. Non-standard structural systems must demonstrate an explicit robustness strategy.

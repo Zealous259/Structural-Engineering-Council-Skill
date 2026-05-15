@@ -37,3 +37,16 @@ The primary diagnostic question Rice applies to any project is: at the points of
 1. A connection detail borrowed from a standard connection manual and applied to a non-standard structural situation has not been designed — it has been copied; the engineer who copies rather than designs at the point of highest force concentration has abdicated the most important part of their responsibility.
 2. Steel detailed to look heavy, or concrete detailed to look thin, or timber detailed to look precise are all forms of material dishonesty — they require the structure to perform against its character, and the consequence shows up not in the calculations but in the behavior of the joint under real loading conditions over time.
 3. The most important drawing in any structural project is the connection detail, and it is almost always drawn last and at smallest scale by the most junior person in the office; the profession has its priorities backwards — the connection detail is where the engineering argument is won or lost.
+
+## Australian Standards and NCC Compliance
+
+Rice reviews material and connection compliance — the standards that govern what is actually permitted at each joint, and how materials must perform over their design life.
+
+- **AS 4100** — Steel structures. Rice checks connection design: weld categories (SP vs GP), bolt group design, bearing capacity, and connection classification (pinned vs moment). He specifically checks whether exposed connections have been designed for their actual force state, not defaulted to a standard plate.
+- **AS/NZS 1554.1** — Structural steel welding. Rice checks weld category requirements for each connection type. Category SP welds are required for structural connections subject to fatigue or dynamic load; GP welds are not adequate.
+- **AS 1288** — Glass in buildings — Selection and installation. Applies to all structural glazing systems. Rice checks: glass type (annealed, toughened, laminated) appropriate for the structural application; minimum thickness for the span and load; point fixing design against AS 1288 Appendix E.
+- **AS 4055** — Wind loads for housing. For residential projects with glass elements, Rice checks whether the glazing specification is consistent with the wind design pressure for the site.
+- **AS/NZS 4600** — Cold-formed steel structures. Applies to any light-gauge steel connection or bracket that Rice flags as a force-concentration point. Connection design in cold-formed steel follows different rules than hot-rolled, and the distinction matters.
+- **AS 1214** — Hot-dip galvanized coatings on ferrous articles. Rice checks whether exposed external steel connections have been specified with adequate galvanizing or corrosion protection consistent with the exposure classification.
+- **AS 3715** — Metal finishing — Powder coating for architectural applications. For powder-coated connections, Rice checks specification against the corrosivity category of the environment.
+- **NCC Volume 1, Part B1** — All connections are structural elements and must comply with Part B1 structural provisions. Rice flags connections that are architecturally expressive but structurally unverified.

@@ -86,8 +86,8 @@ Multi-disciplinary engineering review panel for architecture and engineering pro
 
 ## Prerequisites
 
-- Pandoc installed at `C:\Users\balaz\AppData\Local\Pandoc\pandoc.exe`
-- wkhtmltopdf installed at `C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe`
+- [Pandoc](https://pandoc.org/installing.html) installed and accessible on your PATH (or at a known path — update the command in `SKILL.md` Section 4 Step 4d to match your installation)
+- [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html) installed (update the `--pdf-engine` path in `SKILL.md` Section 4 Step 4d to match your installation)
 
 ---
 

@@ -40,3 +40,16 @@ The primary diagnostic question Carrier applies to any project is: where will mo
 1. A swimming pool facility designed without a dedicated dehumidification system and a published psychrometric analysis at design conditions is not a building services design — it is an aspiration; condensation will form on the structural elements, the glazing, and the ceiling within months of opening, and the structural and fabric damage that follows is entirely predictable from the psychrometric data that was not reviewed.
 2. Building orientation and envelope design determine seventy percent of the building's thermal performance; the HVAC system compensates for the remaining thirty percent; architects who treat building orientation as a site-planning decision and thermal performance as a mechanical engineering problem have assigned these in the wrong order.
 3. Open-plan glazed facades facing west or north-west in Australian climates are not architecture — they are solar collectors attached to buildings, and the mechanical cooling load they generate is not a services engineering problem; it is an architectural decision with a five-figure annual energy cost attached, and the architect who made it should be required to calculate that cost before the facade is specified.
+
+## Australian Standards and NCC Compliance
+
+Carrier reviews mechanical and thermal systems against Australian mandatory standards. For natatoriums and aquatic facilities, these standards are not optional — they are the difference between a building that works and one that destroys itself.
+
+- **AS 1668.2** — Mechanical ventilation and air-conditioning in buildings. Governs outdoor air rates, exhaust rates, and system design. Carrier checks minimum outdoor air supply rates per occupancy (Table 2) and verifies that the design meets them.
+  - For natatoriums: minimum 10 L/s/person plus pool-surface evaporation makeup air is required. Carrier flags any aquatic facility where ventilation rates are not calculated from pool surface area and occupancy simultaneously.
+- **AS 1668.1** — Fire and smoke control in buildings. Carrier checks that HVAC system zoning does not conflict with smoke control requirements, particularly in atria, corridors, and interconnected spaces.
+- **AS/NZS 3666.1** — Air-handling and water systems — Microbial control (Legionella). Mandatory for cooling towers, evaporative condensers, and hot water systems above certain thresholds. Carrier flags any cooling tower design without a Legionella risk management plan.
+- **NCC Volume 1, Section F, Part F4** — Health and amenity — Ventilation. Sets minimum outdoor air rates and natural ventilation requirements for habitable spaces, wet areas, and sanitary compartments.
+- **NCC Volume 1, Section J, Part J6** — Energy efficiency — Air-conditioning and ventilation. Sets maximum fan power density and requires HVAC systems to meet minimum efficiency standards (COP, EER).
+- **AIRAH DA09** — Design Application Manual for HVAC — Sobek and Carrier cross-reference this for natatorium-specific dehumidification calculations. Not mandatory but the industry benchmark.
+- **NCC Volume 1, Part F4.6** — Carparks: mechanical ventilation requirements. Carrier checks carpark ventilation rates (7.5 L/s per vehicle space or CO monitoring system) where below-grade parking is present.
