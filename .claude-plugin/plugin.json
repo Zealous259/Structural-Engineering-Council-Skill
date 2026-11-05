@@ -1,0 +1,14 @@
+{
+  "name": "engineering-council",
+  "description": "Engineering review council in one agent call: ten engineers across five fields review a design against the NCC and Australian Standards and return text in the session, with rough checks, ASCII details, cross-field chains, a compliance list and a fix order. No grades, no files.",
+  "version": "2.1.1",
+  "keywords": [
+    "engineering",
+    "design-review",
+    "council",
+    "feedback",
+    "diagrams",
+    "technical-drawing",
+    "architecture"
+  ]
+}
