@@ -71,9 +71,9 @@ Edit a lane card in `agents/eng-council.md` (one paragraph each). For a one-off 
 
 ## Security
 
-- The council's only tool is Read, and it reads only the files the brief lists. It cannot write files, run commands or reach the network.
+- The council's only tool is Read, and it is told to read only the files the brief lists (an instruction: Read itself can open any file you can). It cannot write files, run commands or reach the network.
 - It starts without the user's CLAUDE.md files (`omitClaudeMd: true`), so personal instructions and memory stay out of its context.
-- The skill runs one local command in the main session, `python shrink.py <paths>`. It reads the drawings it is given and writes resized copies into a new folder under the system temp folder. It never changes the originals and makes no network calls.
+- The skill runs one local command in the main session, `python shrink.py <paths>`. It reads the drawings it is given and writes resized copies into a new private folder with a random name under the system temp folder (`tempfile.mkdtemp`). It never changes the originals and makes no network calls.
 
 ## Version
 
